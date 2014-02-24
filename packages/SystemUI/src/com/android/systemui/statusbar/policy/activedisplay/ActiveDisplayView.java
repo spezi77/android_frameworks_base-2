@@ -69,7 +69,7 @@ import android.widget.LinearLayout;
 import android.widget.RemoteViews;
 import android.widget.TextView;
 
-import com.android.internal.util.slim.QuietHoursHelper;
+import com.android.internal.util.beanstalk.QuietHoursHelper;
 import com.android.internal.widget.multiwaveview.GlowPadView;
 import com.android.internal.widget.multiwaveview.GlowPadView.OnTriggerListener;
 import com.android.internal.widget.multiwaveview.TargetDrawable;
@@ -290,6 +290,9 @@ public class ActiveDisplayView extends FrameLayout
 
         public void onGrabbedStateChange(final View v, final int handle) {
         }
+
+	public void onTargetChange(View v, int target) {
+	}
 
         public void onFinishFinalAnimation() {
         }
