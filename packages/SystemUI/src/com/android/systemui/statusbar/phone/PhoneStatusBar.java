@@ -1112,7 +1112,7 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
         } else {
             addActiveDisplayView();
             addGestureAnywhereView();
-            /* ChaosLab: GestureAnywhere - END */
+            addAppCircleSidebar();
         }
 
         // Setup pie container if enabled
