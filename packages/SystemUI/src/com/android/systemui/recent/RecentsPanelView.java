@@ -1194,6 +1194,16 @@ public class RecentsPanelView extends FrameLayout implements OnItemClickListener
                     // to front, but resized
                     ViewHolder holder = (ViewHolder)selectedView.getTag();
                     openInSplitView(holder, -1);
+                } else if (item.getItemId() == R.id.recent_launch_floating) {
+                    ViewHolder viewHolder = (ViewHolder) selectedView.getTag();
+                    if (viewHolder != null) {
+                        final TaskDescription ad = viewHolder.taskDescription;
+                        dismissAndGoBack();
+                        Intent intent = ad.intent;
+                        intent.addFlags(Intent.FLAG_FLOATING_WINDOW
+                                | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        getContext().startActivity(intent);
+                    }
                 } else {
                     return false;
                 }
