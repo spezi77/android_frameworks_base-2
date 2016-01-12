@@ -20,7 +20,6 @@ import android.app.Activity;
 import android.app.LoadedApk;
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.ColorStateList;
 import android.graphics.Bitmap;
 import android.net.CaptivePortal;
 import android.graphics.drawable.ColorDrawable;
@@ -63,7 +62,6 @@ public class CaptivePortalLoginActivity extends Activity {
 
     private static final String EXTRA_STATUS_BAR_COLOR = "status_bar_color";
     private static final String EXTRA_ACTION_BAR_COLOR = "action_bar_color";
-    private static final String EXTRA_PROGRESS_COLOR = "progress_bar_color";
 
     private static final int SOCKET_TIMEOUT_MS = 10000;
 
@@ -117,14 +115,6 @@ public class CaptivePortalLoginActivity extends Activity {
         setContentView(R.layout.activity_captive_portal_login);
 
         getActionBar().setDisplayShowHomeEnabled(false);
-
-        ProgressBar myProgressBar = (ProgressBar) findViewById(R.id.progress_bar);
-        if (intent.hasExtra(EXTRA_PROGRESS_COLOR)) {
-            int color = intent.getIntExtra(EXTRA_PROGRESS_COLOR, -1);
-            if (color != -1) {
-                myProgressBar.setProgressTintList(ColorStateList.valueOf(color));
-            }
-        }
 
         // Exit app if Network disappears.
         final NetworkCapabilities networkCapabilities = mCm.getNetworkCapabilities(mNetwork);
